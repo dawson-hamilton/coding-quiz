@@ -12,3 +12,32 @@
     margin: 20px;
     padding: 20px;
 }
+
+.btn-container {
+    width: 150px;
+  }
+  
+.btn {
+    width: 50%;
+    display: block;
+    height: 60px;
+    font-size: 15px; 
+    margin: 15px;
+}
+
+a{
+      padding-left: 10px;
+}
+
+#initials{
+      width: 300px;
+}
+
+#allDone{
+      text-align: center;
+      font-size: 75px;
+}
+
+.initials{
+    padding-left: 20px;
+}

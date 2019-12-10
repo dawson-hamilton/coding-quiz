@@ -11,6 +11,10 @@
 
 <body>
 
+    <header id="timer-on-top">
+        <a href="assets/highscores.html">View Highscores</a>
+    </header>
+
     <div class="starterContainer">
         <h1 id="nameHead">Coding Quiz</h1>
 
@@ -20,22 +24,24 @@
                 The instructions are simple! Just press the start button below and in will start the quiz.
                 When you get into the quiz you will be shown a question and you will also be provided with
                 four option for the answer to that question. Your score will be kept and at the end you can
-                see your highscore as well! This quiz will be timed but dont worry no is grading you. have
-                fun and start when youre ready!</h3>
+                see your highscore as well! This quiz will be timed and every time you get a question wrong 
+                there will be 15 seconds taken off the timer. If you get the answer right then the timer 
+                will just keep ticking as usual. your final score will be how many seconds you had left on 
+                the clock. </h3>
             <div class="col-md-3"></div>
         </div>
 
         <div class="row">
-            <div class="col-md-5"></div>
-            <button type="button" class="btn btn-success" class="col-md-2" id="startButt"
+            <div class="col-md-3"></div>
+            <button type="button" class="btn btn-success" class="col-md-6" id="startButt"
                 onclick="window.location.href = 'assets/index.html';">
                 StartQuiz
             </button>
-            <div class="col-md-5"></div>
+            <div class="col-md-3"></div>
         </div>
     </div>
 
-    <script src="style.js"></script>
+    <script src="assets/style.js"></script>
 </body>
 
 </html>

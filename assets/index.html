@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Coding Quiz</title>
 </head>
 
-<body>
+<body id="body">
+
+    <header id="timer-on-top">
+        <a href="highscores.html">View Highscores</a>
+    </header>
 
     <div class="container">
 
         <h1 id="question">test</h1>
 
-        <button id="butt1"></button>
-        <button id="butt2"></button>
-        <button id="butt3"></button>
-        <button id="butt4"></button>
+        <div class="button-container">
+            <button type="button" class="btn btn-dark" id="butt1" class="btn"></button>
+            <button type="button" class="btn btn-dark" id="butt2" class="btn"></button>
+            <button type="button" class="btn btn-dark" id="butt3" class="btn"></button>
+            <button type="button" class="btn btn-dark" id="butt4" class="btn"></button>
+        </div>
 
         <hr>
         <h3 id="correct-or-incorrect"></h3>

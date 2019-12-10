@@ -2,71 +2,84 @@ var questions = [
     {
         title: "What coding language creates the basic info and layout for the webpage?",
         choices: ["javascript", "html", "css", "whats a coding language?"],
-        answer: choices[2]
+        answer: "html"
     },
     {
         title: "What coding language can style the page how you want it?",
         choices: ["javascript", "html", "css", "my page doesnt need style..."],
-        answer: choices[3]
+        answer: "css"
     },
     {
         title: "What coding language can help your page be dynamic?",
         choices: ["javascript", "html", "css", "isnt that what css is for?"],
-        answer: choices[1]
+        answer: "javascript"
     },
     {
-        title: "If you had a group of text boxes that you wanted to store the values of what tag would you use?",
+        title: "If you had a group of text boxes that you wanted to store the values of, what tag would you use?",
         choices: ["<ul>", "<li>", "<form>", "whats a tag?"],
-        answer: choices[3]
+        answer: "<form>"
     },
     {
         title: "If you hadd code that needed html, css, and js, how would you make all those work on one webpage?",
         choices: ["hard code everything into the html page with correct tags", "create seperate pages and link them in the html page",
             "just put all the the code in the html and hope it works", "why would I do that when I could just use js for everything?"],
-        answer: choices[2]
+        answer: "create seperate pages and link them in the html page"
     },
 ];
 
 var h1Tag = document.querySelector("#question");
 var result = document.querySelector("#correct-or-incorrect");
-var butt1El = document.querySelector("#butt1");
-var butt2El = document.querySelector("#butt2");
-var butt3El = document.querySelector("#butt3");
-var butt4El = document.querySelector("#butt4");
-var startButtEl = document.querySelector("#startButt");
+var a = document.querySelector("#butt1");
+var b = document.querySelector("#butt2");
+var c = document.querySelector("#butt3");
+var d = document.querySelector("#butt4");
+var start = document.querySelector("#startButt");
+var timerEl = document.querySelector("#timer");
+
 var timeLeft = 75;
+var totalSeconds = 0;
+var secondsElapsed = 0;
+var status = "Working";
+var interval;
 
-// function startTime() {
-//     var timerInterval = setInterval(function () {
-//         secondsLeft--;
-//         timer.textContent = "Timer " + timeLeft;
+// timerEl.textContent = timeLeft;
+// timerEl.appendChild(timerEl);
 
-//         if (secondsLeft === 0) {
-//             clearInterval(timerInterval);
-//             alert("Out of Time");
-//             questionEnder();
-//         }
+function setTime() {
+    var minutes;
+  
+    if (status === "Working") {
+      minutes = timeLeft.value.trim();
+    } else {
+      minutes = timeLeft.value.trim();
+    }
+  
+    clearInterval(interval);
+    totalSeconds = minutes * 60;
+  }
 
-//         else if (i === questions.length) {
-//             clearInterval(timerInterval);
-//         }
-//     }, 1000)
-//     return (score)
-// }
+  function startTimer() {
+    setTime();
+  
+    interval = setInterval(function() {
+      secondsElapsed++;
+      renderTime();
+    }, 1000);
+  }
 
 function startQuiz() {
     startTimer();
 }
 
 function answers(){
-    butt1El.textContent = choices[0];
-    butt1El.appendChild("#butt1");
-    butt2El.textContent = choices[1];
-    butt2El.appendChild("#butt2");
-    butt3El.textContent = choices[2];
-    butt3El.appendChild("#butt3");
-    butt4El.textContent = choices[3];
-    butt4El.appendChild("#butt4");
+    a.textContent = choices[0];
+    a.appendChild("#butt1");
+    b.textContent = choices[1];
+    b.appendChild("#butt2");
+    c.textContent = choices[2];
+    c.appendChild("#butt3");
+    d.textContent = choices[3];
+    d.appendChild("#butt4");
 }
 
 function questionsAnswers() {
@@ -83,7 +96,7 @@ function questionsAnswers() {
 }
 
 function checkAnswer() {
-    if(choices[i] === answer){
+    if(questions.choices === questions.answer){
         document.getElementById("#body").style.backgroundColor = "#3cb371";
     } else{
         document.getElementById("#body").style.backgroundColor = "#ff0000";
@@ -91,8 +104,8 @@ function checkAnswer() {
     }
 }
 
-startButtEl.addEventListener("click", startQuiz);
-butt1El.addEventListener("click", checkAnswer);
-butt2El.addEventListener("click", checkAnswer);
-butt3El.addEventListener("click", checkAnswer);
-butt4El.addEventListener("click", checkAnswer);
+start.addEventListener("click", startQuiz);
+a.addEventListener("click", checkAnswer);
+b.addEventListener("click", checkAnswer);
+c.addEventListener("click", checkAnswer);
+d.addEventListener("click", checkAnswer);

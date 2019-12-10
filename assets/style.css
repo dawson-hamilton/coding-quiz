@@ -41,3 +41,8 @@ a{
 .initials{
     padding-left: 20px;
 }
+
+#timer{
+    float: right;
+    padding-right: 10px;
+}

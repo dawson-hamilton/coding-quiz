@@ -47,31 +47,31 @@ var interval;
 
 function setTime() {
     var minutes;
-  
+
     if (status === "Working") {
-      minutes = timeLeft.value.trim();
+        minutes = timeLeft.value.trim();
     } else {
-      minutes = timeLeft.value.trim();
+        minutes = timeLeft.value.trim();
     }
-  
+
     clearInterval(interval);
     totalSeconds = minutes * 60;
-  }
+}
 
-  function startTimer() {
+function startTimer() {
     setTime();
-  
-    interval = setInterval(function() {
-      secondsElapsed++;
-      renderTime();
+
+    interval = setInterval(function () {
+        secondsElapsed++;
+        renderTime();
     }, 1000);
-  }
+}
 
 function startQuiz() {
     startTimer();
 }
 
-function answers(){
+function answers() {
     a.textContent = choices[0];
     a.appendChild("#butt1");
     b.textContent = choices[1];
@@ -96,9 +96,9 @@ function questionsAnswers() {
 }
 
 function checkAnswer() {
-    if(questions.choices === questions.answer){
+    if (questions.choices === questions.answer) {
         document.getElementById("#body").style.backgroundColor = "#3cb371";
-    } else{
+    } else {
         document.getElementById("#body").style.backgroundColor = "#ff0000";
         timeLeft - 15;
     }

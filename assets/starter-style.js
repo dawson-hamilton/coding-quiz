@@ -30,13 +30,11 @@ window.onload = function () {
     ];
 
     var h1Tag = document.querySelector("#question");
-    var result = document.querySelector("#correct-or-incorrect");
     var aEl = document.querySelector("#butt1");
     var bEl = document.querySelector("#butt2");
     var cEl = document.querySelector("#butt3");
     var dEl = document.querySelector("#butt4");
     var startEl = document.querySelector("#startButt")
-    var timerEl = document.querySelector("#timeLeft");
     var button = false;
     var timeLeft = 75;
 

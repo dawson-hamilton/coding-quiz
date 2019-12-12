@@ -46,3 +46,19 @@ a{
     float: right;
     padding-right: 10px;
 }
+
+#highscoreTitle{
+    text-align: center;
+}
+
+#goBack{
+    float: left;
+    width: 25%;
+    margin-left: 350px;
+}
+
+#clear{
+    float: right;
+    width: 25%;
+    margin-right: 350px;
+}

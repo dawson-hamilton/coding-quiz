@@ -12,13 +12,16 @@
 <body>
     <h1 id="allDone">All Done!</h1>
     <h3 id="finalScore"></h3>
-    <div class="initials">
-        <h3>Your Initials Here</h3>
-        <input type="text" id="initials">
-    </div>
-    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    <form id="initials-form" method="POST">
+        <div class="initials">
+            <h3>Your Initials Here</h3>
+            <input type="text" id="initials">
+        </div>
+        <div id="msg"></div>
+        <button type="submit" class="btn btn-primary mb-2" id="highscoreSubmit">Submit</button>
+    </form>
 
-    <script src="shighscore.js"></script>
+    <script src="highscore.js"></script>
 </body>
 
 </html>

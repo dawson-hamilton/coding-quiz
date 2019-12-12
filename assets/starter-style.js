@@ -41,46 +41,35 @@ window.onload = function () {
     var timeLeft = 75;
 
     startEl.addEventListener("click", function () {
+        console.log("test");
         startTimer();
         question();
         answers();
     });
 
     aEl.addEventListener("click", function () {
-        console.log("test")
+        console.log("test");
         question();
         answers();
     });
 
     bEl.addEventListener("click", function () {
-        console.log("test")
+        console.log("test");
         question();
         answers();
     });
 
     cEl.addEventListener("click", function () {
-        console.log("test")
+        console.log("test");
         question();
         answers();
     });
 
     dEl.addEventListener("click", function () {
-        console.log("test")
+        console.log("test");
         question();
         answers();
     });
-
-    // function startButton() {
-    //     startTimer();
-    //     question();
-    //     answers();
-    // }
-
-    // function options() {
-    //     console.log("test")
-    //     question();
-    //     answers();
-    // }
 
     function question() {
         button = true;
@@ -111,15 +100,11 @@ window.onload = function () {
     }
 
     function startTimer() {
-        for (var i = timeLeft; i < 1; i--) {
-            task(i);
-        }
-    }
-
-    function task(i) {
-        setTimeout(function () {
-            document.timerEl.textContent = timeLeft;
-            timerEl.append("#timer");
+        var seconds = document.getElementById("countdown").textContent;
+        var countdown = setInterval(function () {
+            seconds--;
+            document.getElementById("countdown").textContent = seconds;
+            if (seconds <= 0) clearInterval(countdown);
         }, 1000);
     }
 

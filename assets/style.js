@@ -35,6 +35,7 @@ window.onload = function () {
     var cEl = document.querySelector("#butt3");
     var dEl = document.querySelector("#butt4");
     var startEl = document.querySelector("#startButt")
+
     var button = false;
     var timeLeft = 75;
 

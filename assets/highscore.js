@@ -3,7 +3,6 @@ window.onload = function () {
     var initialsInput = document.querySelector("#initials");
     var initialsForm = document.querySelector("#initials-form");
     var initialsList = document.querySelector("#initials-list");
-    var goBackEl = document.querySelector("#goBack");
     var clearEl = document.querySelector("#clear");
 
     var highscores = [];
@@ -39,7 +38,7 @@ window.onload = function () {
         localStorage.setItem("todos", JSON.stringify(todos));
     }
 
-    todoForm.addEventListener("submit", function (event) {
+    initialsForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
         var initialsText = initialsInput.value.trim();

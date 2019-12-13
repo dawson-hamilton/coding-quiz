@@ -35,8 +35,7 @@ window.onload = function () {
     var cEl = document.querySelector("#butt3");
     var dEl = document.querySelector("#butt4");
     var buttonEls = document.querySelectorAll("button");
-
-    var startEl = document.querySelector("#startButt")
+    var wrongOrRight = document.querySelector("#correct-or-incorrect");
 
     var button = false;
     var timeLeft = 75;
@@ -47,24 +46,20 @@ window.onload = function () {
     question();
     answers();
 
+    //for some reason everytime this runs it returns false everytime
     buttonEls.forEach(function (element) {
         element.addEventListener("click", function () {
-            var butt1 = this.innerText;
-            checkAnswer(butt1)
+            var choice = this.innerText;
+            if (choice === questions.answer) {
+                wrongOrRight.textContent = "correct!"
+            } else {
+                wrongOrRight.textContent = "incorrect!"
+                timeLeft = timeLeft - 15;
+            }
             question();
             answers();
         });
-
     })
-
-    function checkAnswer() {
-        if (butt1 === questions.answer) {
-            document.getElementById("#body").style.backgroundColor = "#3cb371";
-        } else {
-            document.getElementById("#body").style.backgroundColor = "#ff0000";
-            timeLeft - 15;
-        }
-    }
 
     function question() {
         h1Tag.textContent = questions[i].title;

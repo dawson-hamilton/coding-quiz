@@ -34,68 +34,49 @@ window.onload = function () {
     var bEl = document.querySelector("#butt2");
     var cEl = document.querySelector("#butt3");
     var dEl = document.querySelector("#butt4");
+    var buttonEls = document.querySelectorAll("button");
+
     var startEl = document.querySelector("#startButt")
 
     var button = false;
     var timeLeft = 75;
+    var f = 0;
+    var i = 0;
 
-    startEl.addEventListener("click", function () {
-        console.log("test");
-        startTimer();
-        question();
-        answers();
-    });
+    startTimer();
+    question();
+    answers();
 
-    aEl.addEventListener("click", function () {
-        console.log("test");
-        question();
-        answers();
-    });
+    buttonEls.forEach(function (element) {
+        element.addEventListener("click", function () {
+            var butt1 = this.innerText;
+            checkAnswer(butt1)
+            question();
+            answers();
+        });
 
-    bEl.addEventListener("click", function () {
-        console.log("test");
-        question();
-        answers();
-    });
+    })
 
-    cEl.addEventListener("click", function () {
-        console.log("test");
-        question();
-        answers();
-    });
-
-    dEl.addEventListener("click", function () {
-        console.log("test");
-        question();
-        answers();
-    });
-
-    function question() {
-        button = true;
-        var i = 0;
-        while (button = true) {
-            h1Tag.textContent = questions[i].title;
-            h1Tag.append("#question");
-            i++;
-            button = false;
+    function checkAnswer() {
+        if (butt1 === questions.answer) {
+            document.getElementById("#body").style.backgroundColor = "#3cb371";
+        } else {
+            document.getElementById("#body").style.backgroundColor = "#ff0000";
+            timeLeft - 15;
         }
     }
 
+    function question() {
+        h1Tag.textContent = questions[i].title;
+        i++;
+    }
+
     function answers() {
-        button = true;
-        var f = 0;
-        while (button = true) {
-            aEl.textContent = questions[f].choices[0];
-            aEl.append("#butt1");
-            bEl.textContent = questions[f].choices[1];
-            bEl.append("#butt2");
-            cEl.textContent = questions[f].choices[2];
-            cEl.append("#butt3");
-            dEl.textContent = questions[f].choices[3];
-            dEl.append("#butt4");
-            f++;
-            button = false;
-        }
+        aEl.textContent = questions[f].choices[0];
+        bEl.textContent = questions[f].choices[1];
+        cEl.textContent = questions[f].choices[2];
+        dEl.textContent = questions[f].choices[3];
+        f++;
     }
 
     function startTimer() {
@@ -105,17 +86,6 @@ window.onload = function () {
             document.getElementById("countdown").textContent = seconds;
             if (seconds <= 0) clearInterval(countdown);
         }, 1000);
-    }
-
-    function checkAnswer() {
-        console.log("Clicked Bro");
-
-        if (questions.choices === questions.answer) {
-            document.getElementById("#body").style.backgroundColor = "#3cb371";
-        } else {
-            document.getElementById("#body").style.backgroundColor = "#ff0000";
-            timeLeft - 15;
-        }
     }
 
 }
